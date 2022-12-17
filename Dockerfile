@@ -1,14 +1,5 @@
-FROM node:alpine
-
-WORKDIR /app
-
-COPY . /app
-
-COPY package.json /app/
-
-RUN npm install
-
+FROM node:6.14.2
 EXPOSE 8080
-
+COPY server.js 
 CMD node server.js
 
