@@ -12,8 +12,10 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Testing Docker image...'
-        docker.withRun('cw_image') { c ->
-          sh 'echo "TEST PAST"'
+        script {
+          docker.withRun('cw_image') { c ->
+            sh 'echo Test Passed'
+          }
         }
       }
     }
