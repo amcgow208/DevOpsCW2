@@ -14,7 +14,7 @@ pipeline {
         echo 'Testing Docker image...'
         script {
           docker.withRun('cw_image') { c ->
-            sh 'echo Test Passed'
+            echo 'Test Passed'
           }
         }
       }
