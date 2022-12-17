@@ -7,5 +7,14 @@ pipeline {
         sh 'docker build -t cw_image .'
       }
     }
+    stage('Test') {
+      steps {
+        echo 'Testing Docker image...'
+        docker.withRun('cw_image') { c ->
+          sh 'mycommand'
+        }
+      }
+    }
   }
 }
+
