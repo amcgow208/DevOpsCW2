@@ -12,7 +12,9 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Testing Docker image...'
-        sh 'docker run cw_image /bin/bash -c "mycommand"'
+        docker.withRun('cw_image') { c ->
+          sh 'echo "TEST PAST"'
+        }
       }
     }
   }
