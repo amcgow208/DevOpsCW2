@@ -15,6 +15,13 @@ pipeline {
         }
       }
     }
+    stage('Copy file using ssh') {
+      steps {
+        sshagent(['my-ssh-key']) {
+          sh 'scp /Users/exampleUser/home/aws/listDProcessesNativeStacks.sh ubuntu@ip-172-31-69-105.ec2.internal:/home/ubuntu'
+        }
+      }
+    }
     stage('Test') {
       steps {
         echo 'Running test...'
@@ -25,3 +32,4 @@ pipeline {
     }
   }
 }
+
