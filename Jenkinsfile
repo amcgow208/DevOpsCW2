@@ -14,10 +14,11 @@ pipeline {
           sh 'docker push amcgow208/myimage'
         }
       }
+    }
     stage('Test') {
       steps {
         echo 'Running tests...'
-        sh 'docker run -it amcgow208/myimage node /home/ubuntu/DevOpsCW2/server.ja'
+        sh 'docker run -it amcgow208/myimage node /home/ubuntu/DevOpsCW2/server.js'
       }
     }
   }
