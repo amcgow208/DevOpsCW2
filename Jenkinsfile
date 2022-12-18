@@ -18,7 +18,7 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Running test...'
-        sh 'docker run amcgow208/myimage node /home/ubuntu/DevOpsCW2/server.js'
+        sh 'docker run amcgow208/myimage node /home/ubuntu/DevOpsCW2/'
         echo 'Testing that a container can be launched from the image...'
         sh 'docker run amcgow208/myimage echo "Container launched successfully!"'
       }
