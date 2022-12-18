@@ -10,11 +10,7 @@ pipeline {
     stage('Push to Docker Hub') {
       steps {
         echo 'Pushing Docker image to Docker Hub...'
-        try {
-          sh 'docker push amcgow208/myimage'
-        } catch (e) {
-          echo "Failed to push image to Docker Hub: ${e}"
-        }
+        sh 'docker push amcgow208/myimage'
       }
     }
   }
