@@ -9,8 +9,9 @@ pipeline {
     }
     stage('Push to Docker Hub') {
       steps {
-        echo 'Pushing Docker image to Docker Hub...'
-        sh 'docker push amcgow208/myimage'
+        withDockerRegistry([credentialsId: 'amcgow208']) {
+          sh 'docker push amcgow208/myimage'
+        }
       }
     }
   }
