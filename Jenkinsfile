@@ -10,7 +10,7 @@ pipeline {
     stage('Push to Docker Hub') {
       steps {
         echo 'Pushing Docker image to Docker Hub...'
-        sh 'docker push myimageO'
+        sh 'docker push amcgow208/myimage'
       }
     }
   }
