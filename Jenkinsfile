@@ -23,6 +23,13 @@ pipeline {
         sh 'docker run amcgow208/myimage echo "Container launched successfully!"'
       }
     }
+    stage('Copy file using ssh') {
+      steps {
+        sshagent(['SSH']) {
+          sh 'scp /Users/exampleUser/home/aws/listDProcessesNativeStacks.sh ubuntu@ip-172-31-69-105.ec2.internal:/home/ubuntu'
+        }
+      }
+    }
   }
 }
 
