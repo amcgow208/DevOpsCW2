@@ -1,5 +1,5 @@
-FROM node:6.14.2
+FROM amcgow208/myimage:latest
 EXPOSE 8080
-COPY server.js . 
+COPY server.js .
 CMD node server.js
 
